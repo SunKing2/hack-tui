@@ -8,8 +8,17 @@
 
 🚀 Vision
 ---------
+Declarative UI: 
 
-Rust has amazing TUI crates (`ratatui`, `crossterm`, etc.) and great GUI/web frameworks (`iced`, `leptos`, etc.), but nothing unifies them in a **declarative, component-based model**.
+*   terminal (tui) is a first-class citizen
+
+*   WASM/web (browser) is a first-class citizen
+
+
+“one declarative description → multiple render targets”
+   
+
+Rust has amazing TUI-only crates (`ratatui`) an GUI/web frameworks, but nothing unifies them in a **declarative, component-based model**.
 
 **hack-tui** aims to change that:
 
@@ -17,9 +26,9 @@ Rust has amazing TUI crates (`ratatui`, `crossterm`, etc.) and great GUI/web fra
     
 *   Render **identically** in the terminal (via Ratatui) and the web (via WASM).
     
-*   Compose UIs from reusable components.
+*   strong declarative model
     
-*   Empower both CLI lovers and web developers with the same ergonomic API.
+*   cross-platform rendering
     
 
 * * *
@@ -27,23 +36,34 @@ Rust has amazing TUI crates (`ratatui`, `crossterm`, etc.) and great GUI/web fra
 ✨ Example (imaginary, for now)
 ------------------------------
 
-rust
 
-Copy code
+```
+fn main() {
+    App::new()
+        .view(
+            VStack::new()
+                .child(Label::new("Hello, world!"))
+                .child(Button::new("Click me", |ctx| {
+                    ctx.log("Button clicked!");
+                }))
+        )
+        .run();
+}
+```
 
-`fn main() {     App::new()         .view(             VStack::new()                 .child(Label::new("Hello, world!"))                 .child(Button::new("Click me", |ctx| {                     ctx.log("Button clicked!");                 }))         )         .run(); }`
+**Terminal example (textarea, entry line, buttons):**
 
-**Terminal:**
+<p align="center"><img src="docs/images/editor.png" width="400"></p>
 
-css
+**Terminal example: (tetris game)**
 
-Copy code
+<p align="center"><img src="docs/images/tetris.png" width="400"></p>
 
-`┌──────────────────────┐ │  Hello, world!       │ │  [ Click me ]        │ └──────────────────────┘`
+
 
 **Browser (WASM):**
 
-<p align="center"><img src="docs/mockup\_web.png" width="400"></p>
+<p align="center"><img src="docs/images/web.png" width="400"></p>
 
 * * *
 
