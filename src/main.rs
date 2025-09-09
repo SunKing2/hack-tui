@@ -1,14 +1,14 @@
-fn oldmain() {
+fn ed_main() {
     // Header bar
-    println!("\x1b[1;37;44m─────────────────────────[ Stellar Demo ]─────────────────────────\x1b[0m");
+    println!("\x1b[1;37;44m─────────────────────────[ hack-tui Demo ]───────────────────────\x1b[0m");
 
     // Fake scrollable text area
     println!("\x1b[0;37;40m┌───────────────────────────────────────────────────────────────┐\x1b[0m");
-    println!("\x1b[0;37;40m│ Lorem ipsum dolor sit amet, consectetur adipiscing elit.      │\x1b[0m");
-    println!("\x1b[0;37;40m│ Sed do eiusmod tempor incididunt ut labore et dolore magna.   │\x1b[0m");
-    println!("\x1b[0;37;40m│ Ut enim ad minim veniam, quis nostrud exercitation ullamco.   │\x1b[0m");
-    println!("\x1b[0;37;40m│ laboris nisi ut aliquip ex ea commodo consequat.              │\x1b[0m");
-    println!("\x1b[0;37;40m│ …                                                            │\x1b[0m");
+    println!("\x1b[0;37;40m│ You can:                                                      │\x1b[0m");
+    println!("\x1b[0;37;40m│ Deploy me to the web to with one simple command!:             │\x1b[0m");
+    println!("\x1b[0;37;40m│ $ zonks blorb                                                 │\x1b[0m");
+    println!("\x1b[0;37;40m│ …                                                             │\x1b[0m");
+    println!("\x1b[0;37;40m│ …                                                             │\x1b[0m");
     println!("\x1b[0;37;40m└───────────────────────────────────────────────────────────────┘\x1b[0m");
 
     // Input line
@@ -20,7 +20,7 @@ fn oldmain() {
 }
 
 
-fn old2main() {
+fn rmain() {
     // Top border
     println!("\x1b[1;37;40m┌──────────────┐\x1b[0m");
 
@@ -39,24 +39,18 @@ fn old2main() {
     println!("\x1b[1;37;40m└──────────────┘\x1b[0m");
 }
 
-fn fake3main() {
-    let cyan = "\x1b[1;37;46m  \x1b[0m";
-    let yellow = "\x1b[1;30;43m  \x1b[0m";
-
-    // I-bar
-    println!("{}", cyan);
-    println!("{}", cyan);
-    println!("{}", cyan);
-    print!("{}", cyan);print!("{}", cyan);println!("{}", cyan);
-
-    println!(); // spacer
-
-    // O-block
-    println!("{}{}", yellow, yellow);
-    println!("{}{}", yellow, yellow);
-}
 
 fn main() {
+
+
+    println!();
+    println!();
+    println!();
+    ed_main();
+    println!();
+    println!();
+    println!();
+
 
 /*
     // --- Standard ANSI Colors (theme-dependent) ---
@@ -88,63 +82,11 @@ fn main() {
     
 
 
-/*
-    // these are good colors so I'll keep them in case the earlier defs don't work
-    // Define block "pixels"
-    let cyan   = "\x1b[1;37;46m  \x1b[0m"; // I
-    let green  = "\x1b[1;30;42m  \x1b[0m"; // S
-    let purple = "\x1b[1;37;45m  \x1b[0m"; // T
-    let red    = "\x1b[1;37;41m  \x1b[0m"; // Z
-    let yellow = "\x1b[48;2;255;255;0m  \x1b[0m"; // RGB yellow block
-*/
-
-
-
     // Floating piece
     println!("             {}", purple);
     println!("           {}{}", purple, purple);
     println!("             {}", purple);
     println!();
-
-
-/*
-    // some blue and orange trials
-    println!("             {}{}", blue, blue);
-    println!("             {}", blue);
-    println!("             {}", blue);
-    println!();
-
-    println!("             {}", orange);
-    println!("             {}", orange);
-    println!("             {}{}", orange, orange);
-    println!();
-*/    
-
-
-/*
-    // Row 1 (cyan I)
-    println!("{} ", cyan);
-    println!("{} ", cyan);
-    println!("{} ", cyan);
-    println!("{} ", cyan);
-
-    // Row 2 (green S)
-    println!("        {}{}", green, green);
-    println!("      {}{}", green, green);
-
-    // Row 3 (purple inverted T)
-    println!("                {}", purple);
-    println!("              {}{}{}", purple, purple, purple);
-
-    // Row 4 (red Z)
-    println!("                      {}{}", red, red);
-    println!("                        {}{}", red, red);
-    
-*/    
-
-
-    // experiment
-    // Print cyan block, then return to start of line and print green block offset
 
     println!();
     print!("{}", cyan);
@@ -165,6 +107,8 @@ fn main() {
     print!("    {}{}", red, red);
     println!();
     println!();
+    
+
 }
 
 
